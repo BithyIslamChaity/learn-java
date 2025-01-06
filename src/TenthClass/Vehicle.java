@@ -1,26 +1,16 @@
 package TenthClass;
 
-import TenthClass.interfaceTest.FauInterface;
-import TenthClass.interfaceTest.VehicleInterface;
-
-public abstract class Vehicle implements VehicleInterface, FauInterface {
-
+public class Vehicle {
+    private String numberOfDoor;
     private String engineBrand;
-    private int seatNumber;
-    private int numberOfWheel;
+    private String seatNumber;
 
-    public Vehicle() {
+    public String getNumberOfDoor() {
+        return numberOfDoor;
     }
 
-    public Vehicle(String engineBrand, int seatNumber, int numberOfWheel) {
-        this.engineBrand = engineBrand;
-        this.seatNumber = seatNumber;
-        this.numberOfWheel = numberOfWheel;
-    }
-
-    public Vehicle(String engineBrand, int seatNumber) {
-        this.engineBrand = engineBrand;
-        this.seatNumber = seatNumber;
+    public void setNumberOfDoor(String numberOfDoor) {
+        this.numberOfDoor = numberOfDoor;
     }
 
     public String getEngineBrand() {
@@ -31,31 +21,18 @@ public abstract class Vehicle implements VehicleInterface, FauInterface {
         this.engineBrand = engineBrand;
     }
 
-    public int getSeatNumber() {
+    public String getSeatNumber() {
         return seatNumber;
     }
 
-    public void setSeatNumber(int seatNumber) {
+    public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
     }
 
-
-    public int getNumberOfWheel() {
-        return numberOfWheel;
+    public Vehicle(String numberOfDoor, String engineBrand, String seatNumber) {
+        this.numberOfDoor = numberOfDoor;
+        this.engineBrand = engineBrand;
+        this.seatNumber = seatNumber;
     }
-
-    public void setNumberOfWheel(int numberOfWheel) {
-        this.numberOfWheel = numberOfWheel;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "engineBrand='" + engineBrand + '\'' +
-                ", seatNumber=" + seatNumber +
-                ", numberOfWheel=" + numberOfWheel +
-                '}';
-    }
-
 
 }
