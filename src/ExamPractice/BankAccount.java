@@ -1,34 +1,34 @@
 package ExamPractice;
-import java.io.*;
-import java.util.*;
 
-public class BankAccount {
-    private final String accountId;
-    private double balance;
+abstract class BankAccount {
+        private int accountNumber;
+        private double balance;
 
-    public BankAccount(String accountId, double balance) {
-        this.accountId = accountId;
-        this.balance = balance;
+        public BankAccount(int accountNumber, double balance) {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+        }
+
+        public int getAccountNumber() {
+            return accountNumber;
+        }
+
+        public double getBalance() {
+            return balance;
+        }
+
+        public void setBalance(double balance) {
+            this.balance = balance;
+        }
+
+        public abstract void deposit(double amount) throws InvalidAmountException;
+
+        public abstract void withdraw(double amount) throws InsufficientFundsException, InvalidAmountException;
+
+        public abstract double calculateInterest();
+
+        @Override
+        public String toString() {
+            return "Account Number: " + accountNumber + ", Balance: " + balance;
+        }
     }
-
-    public String getAccountId() {
-        return accountId;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public abstract void deposit(double amount) throws InvalidAmountException;
-
-    public abstract void withdraw(double amount) throws InsufficientFundsException, InvalidAmountException;
-}
-
-
-
-
-
